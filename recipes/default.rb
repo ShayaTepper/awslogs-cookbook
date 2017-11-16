@@ -38,7 +38,7 @@ if  'ubuntu' == node['platform']
     using_systemd = true
     destination_folder = "/lib/systemd/system/#{node['awslogs_agent']['service']}.service"
     source_file = "etc/systemd/awslogs_daemon.service.erb"
-  elsif Chef::VersionConstraint.new('>= 12.04').include?(node['platform_version'])
+  else
     destination_folder = "/etc/init/#{node['awslogs_agent']['service']}.conf"
     source_file = "etc/init/awslogs.conf.erb"
   end
@@ -107,7 +107,7 @@ service_provider = ''
 if  'ubuntu' == node['platform']
   if Chef::VersionConstraint.new('>= 15.04').include?(node['platform_version'])
     service_provider = Chef::Provider::Service::Systemd
-  elsif Chef::VersionConstraint.new('>= 12.04').include?(node['platform_version'])
+  else
     service_provider = Chef::Provider::Service::Upstart
   end
 end
