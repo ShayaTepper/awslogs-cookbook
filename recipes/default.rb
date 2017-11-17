@@ -44,7 +44,7 @@ if  'ubuntu' == node['platform']
   end
 end
 
-template destination_folder do
+template "#{destination_folder}" do
   owner 'root'
   group 'root'
   mode '0644'
