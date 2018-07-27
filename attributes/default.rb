@@ -7,3 +7,4 @@ default['awslogs_agent']['group'] = 'root'
 default['awslogs_agent']['service'] = 'awslogs'
 default['awslogs_agent']['databag'] = nil
 default['awslogs_agent']['streams'] = {}
+override['poise-python']['options']['pip_version'] = '9.0.3'
