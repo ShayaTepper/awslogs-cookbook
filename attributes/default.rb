@@ -7,4 +7,4 @@ default['awslogs_agent']['group'] = 'root'
 default['awslogs_agent']['service'] = 'awslogs'
 default['awslogs_agent']['databag'] = nil
 default['awslogs_agent']['streams'] = {}
-override['poise-python']['options']['pip_version'] = 'https://raw.githubusercontent.com/pypa/get-pip/master/2.6/get-pip.py'
+override['poise-python']['options']['pip_version'] = 'https://bootstrap.pypa.io/pip/2.6/get-pip.py'
