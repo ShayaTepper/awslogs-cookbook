@@ -26,7 +26,7 @@ python_virtualenv node['awslogs_agent']['path'] do
   wheel_version false
 end
 
-execute "wget 'https://raw.githubusercontent.com/pypa/get-pip/master/2.6/get-pip.py' -O /tmp/get-pip.py"
+execute "wget 'https://bootstrap.pypa.io/pip/2.6/get-pip.py' -O /tmp/get-pip.py"
 execute "#{node['awslogs_agent']['path']}/bin/python /tmp/get-pip.py"
 
 python_package "awscli-cwlogs" do
